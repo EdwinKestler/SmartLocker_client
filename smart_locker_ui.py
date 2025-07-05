@@ -42,6 +42,39 @@ class SmartLockerUI:
         self.info_label      = tk.Label(self.root, text="Info: N/A")
         self.info_label.pack(pady=(0, 10))
 
+        # --- Door grid (1-16) ---
+        self.door_labels: dict[int, tk.Label] = {}
+        door_frame = tk.Frame(self.root)
+        door_frame.pack(pady=(0, 10))
+        for row in range(8):
+            left_num = row + 1
+            right_num = row + 9
+            left_lbl = tk.Label(
+                door_frame,
+                text=str(left_num),
+                width=4,
+                height=2,
+                relief="ridge",
+                borderwidth=2,
+                bg="green",
+                fg="white",
+            )
+            left_lbl.grid(row=row, column=0, padx=2, pady=2)
+            self.door_labels[left_num] = left_lbl
+
+            right_lbl = tk.Label(
+                door_frame,
+                text=str(right_num),
+                width=4,
+                height=2,
+                relief="ridge",
+                borderwidth=2,
+                bg="green",
+                fg="white",
+            )
+            right_lbl.grid(row=row, column=1, padx=2, pady=2)
+            self.door_labels[right_num] = right_lbl
+
         # Close button
         self.close_btn = tk.Button(self.root, text="Close", command=self.on_close)
         self.close_btn.pack(pady=(0, 10))
@@ -51,7 +84,7 @@ class SmartLockerUI:
         threading.Thread(target=self.start_loop, daemon=True).start()
         self.ble_client = SmartLockerClient()
         # Callbacks for door & available updates
-        self.ble_client.register_door_callback(lambda d: self.root.after(0, self._update_info))
+        self.ble_client.register_door_callback(lambda d: self.root.after(0, self._on_door_event, d))
         self.ble_client.register_available_callback(lambda a: self.root.after(0, self._update_available, a))
 
         # Clean shutdown
@@ -83,6 +116,19 @@ class SmartLockerUI:
         info = self.ble_client.last_door or self.ble_client.locker_code or "N/A"
         self.info_label.config(text=f"Info: {info}")
 
+    def _set_door_state(self, door: str | int, used: bool):
+        try:
+            num = int(door)
+        except (TypeError, ValueError):
+            return
+        lbl = self.door_labels.get(num)
+        if lbl:
+            lbl.config(bg="red" if used else "green")
+
+    def _on_door_event(self, door):
+        self._update_info()
+        self._set_door_state(door, True)
+
     #
     # --- Send Code flow ---
     #
@@ -110,6 +156,8 @@ class SmartLockerUI:
         if success:
             messagebox.showinfo("Sent", f"Code '{self.code_entry_var.get()}' sent")
             self._update_status("Code sent")
+            if self.ble_client.last_door:
+                self._set_door_state(self.ble_client.last_door, False)
         else:
             messagebox.showerror("Failed", "Failed to send code")
             self._update_status("Error sending code")
@@ -139,6 +187,8 @@ class SmartLockerUI:
             self._update_status("Locker assigned")
             self.code_entry_var.set(code)
             self._update_info()
+            if self.ble_client.last_door:
+                self._set_door_state(self.ble_client.last_door, True)
         except Exception as e:
             messagebox.showerror("Error", str(e))
             self._update_status("Error occurred")
