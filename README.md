@@ -1,5 +1,7 @@
 # SmartLocker BLE Client
 
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
 A Python application that connects to a SmartLocker BLE device (ESP32), subscribes to notifications, and handles the locker access workflow.
 
 ## Overview
