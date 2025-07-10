@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fcb2529-64ca-4bac-b6b7-ed6e043f9cde" name="Changes" comment="intial commit">
-      <change afterPath="$PROJECT_DIR$/android/README.md" afterDir="false" />
+    <list default="true" id="6fcb2529-64ca-4bac-b6b7-ed6e043f9cde" name="Changes" comment="added folder and REDAME for folder.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locker_code.json" beforeDir="false" afterPath="$PROJECT_DIR$/locker_code.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +16,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOPHIPfs6dhca_&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1751744082888
+    }
+  ]
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/EdwinKestler/SmartLocker_client.git&quot;,
@@ -82,7 +93,8 @@
       <workItem from="1748836949936" duration="1796000" />
       <workItem from="1751411231702" duration="389000" />
       <workItem from="1751411761589" duration="16304000" />
-      <workItem from="1751690844850" duration="977000" />
+      <workItem from="1751690844850" duration="10464000" />
+      <workItem from="1752127818187" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="intial commit">
       <option name="closed" value="true" />
@@ -116,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751691773124</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added folder and REDAME for folder.">
+      <option name="closed" value="true" />
+      <created>1751691883381</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1751691883381</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,12 +156,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added the folder" />
     <MESSAGE value="intial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="intial commit" />
+    <MESSAGE value="added folder and REDAME for folder." />
+    <option name="LAST_COMMIT_MESSAGE" value="added folder and REDAME for folder." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonBLEProject$programacionfase5.coverage" NAME="programacionfase5 Coverage Results" MODIFIED="1748662768960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../kestl/Downloads" />
     <SUITE FILE_PATH="coverage/PythonBLEProject$smart_locker_ble.coverage" NAME="smart_locker_ble Coverage Results" MODIFIED="1751434312253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PythonBLEProject$example.coverage" NAME="example Coverage Results" MODIFIED="1748495420262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PythonBLEProject$smart_locker_ui.coverage" NAME="smart_locker_ui Coverage Results" MODIFIED="1751691418132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PythonBLEProject$smart_locker_ui.coverage" NAME="smart_locker_ui Coverage Results" MODIFIED="1752015742209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
